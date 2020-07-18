@@ -1,9 +1,17 @@
 body {
+    margin: 0;
     font-family: 'Inconsolata', monospace;
     background-color: #303030;
     color: white;
     text-align: center;
 }
+
+.container{
+    margin: 0;
+    padding: 1px;
+    background-color:#61749e;
+    color: black;
+  }
 
 .score {
     margin-top: 40px;
