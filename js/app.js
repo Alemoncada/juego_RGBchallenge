@@ -7,6 +7,13 @@ game();
 // enlaza el click de los circulos a la funcion guess
 
 $('.option').on('click', guess);
+$('.close a').on('click', function(){
+    $('.result').hide();
+    $('.option').removeClass('scale');
+
+    game();
+});
+
 
 game();
 
@@ -25,16 +32,18 @@ function game(){
 }
 
 function guess(){
+    $(this).addClass('scale');
+    
     var index = $('.option').index(this);
     if (index == correct){
-        alert('Muy bien!!!');      
+        $('.result.won').show();
         score++;
     }else {
-        alert ('No, Respuesta incorrecta');
+        $('.result.lost').show();
         score = 0;
     }
     $('.score span').text(score);
-    game(); 
+     
 }
 
 function generateColor(){
